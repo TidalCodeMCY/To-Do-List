@@ -1,0 +1,60 @@
+body {
+    margin: 0;
+    display: grid;
+    grid-template-rows: 15% 83% 2%;
+    height: 98.2vh;
+    width: 100% 100%;
+}
+#Headimg {
+    height: 120px;
+    width: 120px;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 4;
+    justify-self: start;
+}
+#Footimg {
+    height: 20px;
+    width: 20px;
+}
+#Head {
+    margin: 0;
+    display: grid;
+    align-items: center;
+    justify-items:center;
+    grid-template-columns: 50% 50%;
+    border-bottom: 1px solid black;
+}
+#H1 {
+    padding: 30px;
+    margin: 0;
+    
+}
+#Addtask {
+    margin: 0;
+}
+footer {
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid black;
+}
+#Copy {
+    margin: 0;
+    padding-right: 20px;
+    padding-top: 12px;
+    font-size: 12px;
+    align-self: center;
+}
+#Main {
+    display: grid;
+    grid-template-columns: 20% 80%;
+}
+#Boxone {
+    padding-left: 10px;
+    border-right: 1px solid black;
+}
+#Footimg {
+    padding-top: 5px;
+}
+

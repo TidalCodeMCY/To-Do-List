@@ -1,4 +1,0 @@
-playerwins with x
-
-playerloss with x
-
