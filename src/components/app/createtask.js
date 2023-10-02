@@ -5,21 +5,75 @@ export function createCard(card){
         const mainDiv = document.createElement('div');
         mainDiv.id = 'Testone';
         boxTwo.appendChild(mainDiv);
+        const innerDiv = document.createElement('div');
+        innerDiv.classList.add('innerDiv');
+
         card.forEach(element => {
             for(const [key,value] of Object.entries(element)) {
-                const titleTest = document.createElement('p');
-                titleTest.classList.add('card');
-                titleTest.innerText = value;
-                titleTest.id = key;
-                mainDiv.appendChild(titleTest);
+                if(key === 'title'){
+                    const titleTest = document.createElement('p');
+                    titleTest.classList.add('card');
+                    titleTest.innerText = value;
+                    mainDiv.appendChild(titleTest);
+                }else if(key === 'description'){
+                    const descTest = document.createElement('p');
+                    descTest.classList.add('card');
+                    descTest.innerText = value;
+                    mainDiv.appendChild(descTest);
+                }else if(key === 'prio'){
+                    mainDiv.appendChild(innerDiv);
+                    const p1 = document.createElement('p');
+                    p1.classList.add('Prio');
+                    p1.textContent = 'High';
+                    innerDiv.appendChild(p1);
+                    const p2 = document.createElement('p');
+                    p2.classList.add('Prio');
+                    p2.textContent = 'Med';
+                    innerDiv.appendChild(p2);
+                    const p3 = document.createElement('p');
+                    p3.classList.add('Prio');
+                    p3.textContent = 'Low';
+                    innerDiv.appendChild(p3);
+
+                    if(value === 'High'){
+                        p1.style.borderColor = 'green';
+                        p2.style.borderColor = 'red';
+                        p3.style.borderColor = 'red';
+                
+                        p1.style.borderWidth = '2px';
+                        p2.style.borderWidth = '2px';
+                        p3.style.borderWidth = '2px';
+                
+                    }else if(value === 'Med'){
+                        p1.style.borderColor = 'red';
+                        p2.style.borderColor = 'green';
+                        p3.style.borderColor = 'red';
+                
+                        p1.style.borderWidth = '2px';
+                        p2.style.borderWidth = '2px';
+                        p3.style.borderWidth = '2px';
+                    }else if(value === 'Low'){
+                        p1.style.borderColor = 'red';
+                        p2.style.borderColor = 'red';
+                        p3.style.borderColor = 'green';
+                
+                        p1.style.borderWidth = '2px';
+                        p2.style.borderWidth = '2px';
+                        p3.style.borderWidth = '2px';
+                    };    
+                }else if(key === 'dateDue'){
+                    const date = document.createElement('p');
+                    date.classList.add('dateDue');
+                    date.innerText = value;
+                    innerDiv.appendChild(date);
+                };
             };
         });
         const trashCard = document.createElement('p');
         trashCard.id = 'Trashcard';
         trashCard.textContent = 'Trash';
-        mainDiv.appendChild(trashCard);
+        innerDiv.appendChild(trashCard);
 
-        saveCard(card);
     })();
     
 };

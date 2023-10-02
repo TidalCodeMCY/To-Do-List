@@ -129,7 +129,9 @@ footer {
     margin-top: 15px;
     font-weight: bold;
 }
-
+.Prio {
+    border: 2px solid black;
+}
 /* this code controls the look of the modals */
 #Modalone {
     padding: 0;
