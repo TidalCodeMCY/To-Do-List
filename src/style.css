@@ -81,53 +81,8 @@ footer {
 }
 
 /* This is the code to adjust the tasks visual look of the tasks*/
-#Testone {
+.innerdivmain {
     display: grid;
-}
-#Inner {
-    display: grid;
-    grid-template-columns: 15% 15% 15% 45% 10%;
-    border-bottom: 1px solid black;
-    padding-left: 10px;
-}
-#Description {
-    padding-left: 10px;
-    margin: 5px 5px 0 0;
-}
-#titletest {
-    margin: 0;
-    padding-top: 10px;
-    text-align: center;
-}
-#Delete {
-    cursor: pointer;
-}
-#Delete:hover {
-    font-size: 18px;
-    margin-bottom: 0;
-    margin-top: 15px;
-}
-#Innerprioone,#Innerpriotwo,#Innerpriothree {
-    border: 1px solid black;
-    text-align: center;
-    margin-right: 5px;
-    height: 20px;
-    cursor: pointer;
-}
-#Innerprioone:hover,#Innerpriotwo:hover,#Innerpriothree:hover {
-    font-size: 18px;
-    margin-bottom: 0;
-    margin-top: 15px;
-}
-#Date {
-    text-align: center;
-    cursor: pointer;
-}
-#Date:hover {
-    font-size: 18px;
-    margin-bottom: 0;
-    margin-top: 15px;
-    font-weight: bold;
 }
 .Prio {
     border: 2px solid black;

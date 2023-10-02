@@ -1,6 +1,8 @@
 import { toDoItem } from "./classes";
 import { createCard } from "./createtask";
 import { resetModal } from "./resetmodal";
+import { lightFormat } from 'date-fns';
+import { parseISO } from 'date-fns'
 
 export function getCardData(val) {
     let Cards = [];
@@ -10,7 +12,9 @@ export function getCardData(val) {
     let prio = val;
     let date = document.getElementById('Datebox').value;
 
-    let newCard = new toDoItem(title,description,prio,date);
+    var fixedDate = lightFormat(parseISO(date),'MM/dd/yyyy');
+
+    let newCard = new toDoItem(title,description,prio,fixedDate);
     Cards.push(newCard);
     createCard(Cards);
     resetModal();

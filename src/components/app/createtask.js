@@ -3,7 +3,7 @@ export function createCard(card){
 
     (function(){
         const mainDiv = document.createElement('div');
-        mainDiv.id = 'Testone';
+        mainDiv.classList.add('innerdivmain');
         boxTwo.appendChild(mainDiv);
         const innerDiv = document.createElement('div');
         innerDiv.classList.add('innerDiv');
@@ -12,12 +12,12 @@ export function createCard(card){
             for(const [key,value] of Object.entries(element)) {
                 if(key === 'title'){
                     const titleTest = document.createElement('p');
-                    titleTest.classList.add('card');
+                    titleTest.classList.add('title');
                     titleTest.innerText = value;
                     mainDiv.appendChild(titleTest);
                 }else if(key === 'description'){
                     const descTest = document.createElement('p');
-                    descTest.classList.add('card');
+                    descTest.classList.add('description');
                     descTest.innerText = value;
                     mainDiv.appendChild(descTest);
                 }else if(key === 'prio'){
@@ -63,7 +63,7 @@ export function createCard(card){
                     };    
                 }else if(key === 'dateDue'){
                     const date = document.createElement('p');
-                    date.classList.add('dateDue');
+                    date.classList.add('duedate');
                     date.innerText = value;
                     innerDiv.appendChild(date);
                 };
