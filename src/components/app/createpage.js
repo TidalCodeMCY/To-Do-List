@@ -3,7 +3,7 @@ import headimg from '../img/github.png';
 export function createPage(){
 
     const body = document.body; 
-    
+
     (function addHeader() {
         const header = document.createElement('header');
         header.id = 'Head';
@@ -58,6 +58,41 @@ export function createPage(){
             const boxtwo = document.createElement('div');
             boxtwo.id = 'Boxtwo';
             main.appendChild(boxtwo);
+            const testDivOne = document.createElement('div');
+            testDivOne.id = 'Testone';
+            boxtwo.appendChild(testDivOne);
+            const testTitle = document.createElement('p');
+            testTitle.id = 'titletest';
+            testTitle.textContent = 'To Do Title';
+            testDivOne.appendChild(testTitle);
+            const testDesc = document.createElement('p');
+            testDesc.id = 'Description';
+            testDesc.textContent = 'This describes the tasks duties!This describes the tasks duties!This describes the tasks duties!This describes the tasks duties!This describes the tasks duties!This describes the tasks duties!This describes the tasks duties!This describes the tasks duties!This describes the tasks duties!';
+            testDivOne.appendChild(testDesc);
+            const innerBox = document.createElement('div');
+            innerBox.id = 'Inner';
+            testDivOne.appendChild(innerBox);
+            const innerPrioOne = document.createElement('p');
+            innerPrioOne.id = 'Innerprioone';
+            innerPrioOne.textContent = 'High';
+            innerBox.appendChild(innerPrioOne);
+            const innerPrioTwo = document.createElement('p');
+            innerPrioTwo.id = 'Innerpriotwo';
+            innerPrioTwo.textContent = 'Med';
+            innerBox.appendChild(innerPrioTwo);
+            const innerPrioThree = document.createElement('p');
+            innerPrioThree.id = 'Innerpriothree';
+            innerPrioThree.textContent = 'Low';
+            innerBox.appendChild(innerPrioThree);
+            const date = document.createElement('p');
+            date.id = 'Date';
+            date.textContent = '03/13/23';
+            innerBox.appendChild(date);
+            const deleteCard = document.createElement('p');
+            deleteCard.id = 'Delete';
+            deleteCard.textContent = 'Trash';
+            innerBox.appendChild(deleteCard);
+
         })();
         
     })();
@@ -73,6 +108,79 @@ export function createPage(){
         footImg.id = 'Footimg';
         footImg.src = headimg;
         footer.appendChild(footImg);
+    })();
+
+    (function addModal(){
+        const dialog = document.createElement('dialog');
+        dialog.id = 'Modalone';
+        body.appendChild(dialog);
+        const modalForm = document.createElement('form');
+        modalForm.id = 'Formmodal';
+        dialog.appendChild(modalForm);
+        const cancelTask = document.createElement('p');
+        cancelTask.id = 'Canceltaskmenu';
+        cancelTask.textContent = 'x';
+        modalForm.appendChild(cancelTask);
+        const titleLab = document.createElement('label');
+        titleLab.id = 'Titlelabel';
+        titleLab.setAttribute('for', 'Title');
+        titleLab.textContent = 'Task';
+        modalForm.appendChild(titleLab);
+        const titleInput = document.createElement('input');
+        titleInput.id = 'Title';
+        titleInput.type = 'text';
+        modalForm.appendChild(titleInput);
+        const descriptionLab = document.createElement('label');
+        descriptionLab.id = 'Descriptionlabel';
+        descriptionLab.setAttribute('for', 'Descriptioninput');
+        descriptionLab.textContent = 'Description';
+        modalForm.appendChild(descriptionLab);
+        const descriptionInput = document.createElement('textarea');
+        descriptionInput.id = 'Descriptioninput';
+        descriptionInput.rows = '5';
+        descriptionInput.cols = '50';
+        modalForm.appendChild(descriptionInput);
+        const lastDiv = document.createElement('div');
+        lastDiv.id = 'Lastdiv';
+        modalForm.appendChild(lastDiv);
+        const innerModalDiv = document.createElement('div');
+        innerModalDiv.id = 'Innermodaldiv';
+        lastDiv.appendChild(innerModalDiv);
+        //add 3 input checkboxes high med and low
+        const prio = document.createElement('p');
+        prio.id = 'Prio';
+        prio.textContent = 'Priority';
+        innerModalDiv.appendChild(prio);
+        const highBox = document.createElement('p');
+        highBox.textContent = 'High';
+        highBox.id = 'Highbox';
+        innerModalDiv.appendChild(highBox);
+        const medBox = document.createElement('p');
+        medBox.textContent = 'Med';
+        medBox.id = 'Medbox';
+        innerModalDiv.appendChild(medBox);
+        const lowBox = document.createElement('p');
+        lowBox.textContent = 'Low';
+        lowBox.id = 'Lowbox';
+        innerModalDiv.appendChild(lowBox);
+        const finalModalDiv = document.createElement('div');
+        finalModalDiv.id = 'Finalmodaldiv';
+        lastDiv.appendChild(finalModalDiv);
+        //add a date input and a submit button.
+        const dueDate = document.createElement('p');
+        dueDate.textContent = 'Due Date';
+        dueDate.id = 'Due';
+        finalModalDiv.appendChild(dueDate);
+        const dateBox = document.createElement('input');
+        dateBox.setAttribute('type', 'date');
+        dateBox.id = 'Datebox';
+        finalModalDiv.appendChild(dateBox);
+        const submitModal = document.createElement('input');
+        submitModal.setAttribute('type', 'submit');
+        submitModal.id = 'Submitmodal';
+        submitModal.name = 'Add Task';
+        finalModalDiv.appendChild(submitModal);
+
     })();
 
 };

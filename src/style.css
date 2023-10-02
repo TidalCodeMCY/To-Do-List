@@ -33,6 +33,22 @@ body {
 }
 #Addtask {
     margin: 0;
+    cursor: pointer;
+}
+#Addtask:hover {
+    font-size: 18px;
+}
+#Home {
+    cursor: pointer;
+}
+#Home:hover {
+    font-size: 18px;
+}
+#Notes {
+    cursor: pointer;
+}
+#Notes:hover {
+    font-size: 18px;
 }
 footer {
     display: flex;
@@ -56,5 +72,147 @@ footer {
 }
 #Footimg {
     padding-top: 5px;
+    cursor: pointer;
+}
+#Footimg:hover {
+    height: 26px;
+    width: 26px;
+    padding: 2px;
 }
 
+/* This is the code to adjust the tasks visual look of the tasks*/
+#Testone {
+    display: grid;
+}
+#Inner {
+    display: grid;
+    grid-template-columns: 15% 15% 15% 45% 10%;
+    border-bottom: 1px solid black;
+    padding-left: 10px;
+}
+#Description {
+    padding-left: 10px;
+    margin: 5px 5px 0 0;
+}
+#titletest {
+    margin: 0;
+    padding-top: 10px;
+    text-align: center;
+}
+#Delete {
+    cursor: pointer;
+}
+#Delete:hover {
+    font-size: 18px;
+    margin-bottom: 0;
+    margin-top: 15px;
+}
+#Innerprioone,#Innerpriotwo,#Innerpriothree {
+    border: 1px solid black;
+    text-align: center;
+    margin-right: 5px;
+    height: 20px;
+    cursor: pointer;
+}
+#Innerprioone:hover,#Innerpriotwo:hover,#Innerpriothree:hover {
+    font-size: 18px;
+    margin-bottom: 0;
+    margin-top: 15px;
+}
+#Date {
+    text-align: center;
+    cursor: pointer;
+}
+#Date:hover {
+    font-size: 18px;
+    margin-bottom: 0;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+/* this code controls the look of the modals */
+#Modalone {
+    padding: 0;
+    padding-left: 15px;
+    padding-right: 15px;
+    border: 1px solid white;
+    background-color: rgba(0,0,0,.8);
+    color: aliceblue;
+    border-radius: 4px;
+}
+#Formmodal {
+    display: grid;
+}
+#Titlelabel {
+    padding-bottom: 8px;
+    font-size: 21px;
+}
+#Canceltaskmenu {
+    display: grid;
+    margin: 0;
+    font-size: 24px;
+    cursor: pointer;
+    width: 15px;
+    justify-self: end;
+}
+#Canceltaskmenu:hover {
+    font-size: 24px;
+    text-shadow: 1px 1px grey;
+}
+#Descriptioninput {
+    font-size: 18px;
+    width: 300px;
+    border-radius: 4px;
+}
+#Title {
+    width: 220px;
+    border: 1px solid rgba(0,0,0);
+    border-radius: 4px;
+    margin-bottom: 8px;
+    font-size: 21px;
+}
+#Descriptionlabel {
+    font-size: 21px;
+}
+#Lastdiv {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    justify-items: center;
+    align-items: center;
+}
+#Highbox, #Medbox, #Lowbox {
+    border-radius: 4px;
+    width: 100px;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    border: 1px solid black;
+}
+#Highbox:hover, #Medbox:hover, #Lowbox:hover{
+    text-shadow: 1px 1px white;
+    border: 1px solid white;
+}
+#Prio,#Highbox, #Medbox, #Lowbox {
+    text-align: center;
+    font-size: 18px;
+}
+#Finalmodaldiv {
+    display: grid;
+}
+#Datebox {
+    font-size: 14px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+#Submitmodal {
+    height: 20px;
+    width: 80px;
+    display: grid;
+    justify-self: center;
+    background-color: white;
+    border-radius: 4px;
+}
+#Due {
+    color: aliceblue;
+    font-size: 18px;
+}
