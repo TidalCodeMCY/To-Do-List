@@ -1,4 +1,7 @@
+import { saveCard } from "./savecard";
+
 export function createCard(card){
+    
     const boxTwo = document.getElementById('Boxtwo');
 
     (function(){
@@ -75,5 +78,4 @@ export function createCard(card){
         innerDiv.appendChild(trashCard);
 
     })();
-    
 };

@@ -1,10 +1,11 @@
 import headimg from '../img/github.png';
+import { fetchData } from './fetchdata';
 
 export function createPage(){
 
     const body = document.body; 
 
-    (function addHeader() {
+    function addHeader() {
         const header = document.createElement('header');
         header.id = 'Head';
         body.appendChild(header);
@@ -20,9 +21,9 @@ export function createPage(){
         addTask.id = 'Addtask';
         addTask.textContent = 'Add Task';
         header.appendChild(addTask);
-    })();
+    };
 
-    (function addMain() {
+    function addMain() {
 
         const main = document.createElement('main');
         main.id = 'Main';
@@ -60,9 +61,9 @@ export function createPage(){
             main.appendChild(boxtwo);
         })();
         
-    })();
+    };
 
-    (function addFooter() {
+    function addFooter() {
         const footer = document.createElement('footer');
         body.appendChild(footer);
         const copyRight = document.createElement('p');
@@ -73,9 +74,9 @@ export function createPage(){
         footImg.id = 'Footimg';
         footImg.src = headimg;
         footer.appendChild(footImg);
-    })();
+    };
 
-    (function addModal(){
+    function addModal(){
         const dialog = document.createElement('dialog');
         dialog.id = 'Modalone';
         body.appendChild(dialog);
@@ -146,6 +147,20 @@ export function createPage(){
         submitModal.name = 'Add Task';
         finalModalDiv.appendChild(submitModal);
 
-    })();
+    };
+
+    if(localStorage.getItem("key0") === null){
+        addHeader();
+        addMain();
+        addFooter();
+        addModal();
+    }else if(localStorage.getItem('key0') != null){
+        addHeader();
+        addMain();
+        addFooter();
+        addModal();
+        //add a way to access the storage make the keys simple like key0 - key10 or something.
+        fetchData();
+    };
 
 };

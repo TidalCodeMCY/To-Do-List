@@ -3,6 +3,7 @@ import { createCard } from "./createtask";
 import { resetModal } from "./resetmodal";
 import { lightFormat } from 'date-fns';
 import { parseISO } from 'date-fns'
+import { saveCard } from "./savecard";
 
 export function getCardData(val) {
     let Cards = [];
@@ -16,6 +17,7 @@ export function getCardData(val) {
 
     let newCard = new toDoItem(title,description,prio,fixedDate);
     Cards.push(newCard);
+    saveCard(Cards);
     createCard(Cards);
     resetModal();
 };
