@@ -1,17 +1,24 @@
-import { saveCard } from "./savecard";
+let idValues = 0;
+idValues = JSON.parse(localStorage.getItem('cardId'));
+    
+if(window.performance.getEntriesByType('navigation').map((nav) => nav.type).includes('reload')){
+    idValues = 0;
+};
 
 export function createCard(card){
     
     const boxTwo = document.getElementById('Boxtwo');
-
+    
     (function(){
         const mainDiv = document.createElement('div');
         mainDiv.classList.add('innerdivmain');
         boxTwo.appendChild(mainDiv);
         const innerDiv = document.createElement('div');
         innerDiv.classList.add('innerDiv');
-
-        card.forEach(element => {
+        
+        
+        
+        card.forEach(element => {    
             for(const [key,value] of Object.entries(element)) {
                 if(key === 'title'){
                     const titleTest = document.createElement('p');
@@ -69,13 +76,17 @@ export function createCard(card){
                     date.classList.add('duedate');
                     date.innerText = value;
                     innerDiv.appendChild(date);
-                };
-            };
+                };  
+             };
+             const trashCard = document.createElement('button');
+             trashCard.classList.add('Trashcard');
+             trashCard.textContent = 'Trash';
+             trashCard.id = `key${idValues}`;
+             innerDiv.appendChild(trashCard);
+             idValues++; 
+             localStorage.setItem('cardId',JSON.stringify(idValues));
         });
-        const trashCard = document.createElement('p');
-        trashCard.id = 'Trashcard';
-        trashCard.textContent = 'Trash';
-        innerDiv.appendChild(trashCard);
-
+        
     })();
+    
 };

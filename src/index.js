@@ -1,4 +1,5 @@
 import { createPage } from "./components/app/createpage";
+import { deleteCard } from "./components/app/deletecard";
 import { getCardData } from "./components/app/getcarddata";
 import { prioChoice } from "./components/app/priochoice";
 import { resetModal } from "./components/app/resetmodal";
@@ -14,6 +15,7 @@ createPage();
     const medBox = document.getElementById('Medbox');
     const lowBox = document.getElementById('Lowbox');
     const submitBtn = document.getElementById('Submitmodal');
+    const deleteBtn = document.getElementsByClassName('Trashcard');
 
     let priorityChoice;
 
@@ -43,8 +45,15 @@ createPage();
 
     submitBtn.addEventListener('click',(e) => {
         e.preventDefault();
+        location.reload();
         getCardData(priorityChoice);
         modal.close();
     });
-
+    
+    for(let btn of deleteBtn) {
+        btn.addEventListener('click', (e) => {
+            e = e.currentTarget;
+            deleteCard(e);
+        });
+    }
 })();
