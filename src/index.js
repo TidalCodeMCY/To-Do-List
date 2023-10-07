@@ -2,6 +2,7 @@ import { createPage } from "./components/app/createpage";
 import { deleteCard } from "./components/app/deletecard";
 import { getCardData } from "./components/app/getcarddata";
 import { prioChoice } from "./components/app/priochoice";
+import { resetKeys } from "./components/app/resetkeys";
 import { resetModal } from "./components/app/resetmodal";
 import './style.css';
 
@@ -54,6 +55,7 @@ createPage();
         btn.addEventListener('click', (e) => {
             e = e.currentTarget;
             deleteCard(e);
+            resetKeys();
         });
     }
 })();

@@ -7,6 +7,8 @@ if(window.performance.getEntriesByType('navigation').map((nav) => nav.type).incl
 
 export function createCard(card){
     
+    if(Array.isArray(card)){
+        
     const boxTwo = document.getElementById('Boxtwo');
     
     (function(){
@@ -88,5 +90,5 @@ export function createCard(card){
         });
         
     })();
-    
+  };  
 };
